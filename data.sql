@@ -1,18 +1,13 @@
--- Database should be prime_feedback
-CREATE DATABASE "prime_feedback";
 
--- Switch to "prime_feedback" before making:
--- Table to store the feedback
-CREATE TABLE "feedback" (
+CREATE DATABASE "react_todo";
+
+
+CREATE TABLE "list" (
   "id" serial primary key,
-  "feeling" INT not null,
-  "understanding" INT not null,
-  "support" INT not null,
-  "comments" text,
-  "flagged" boolean default false,
-  "date" date not null default CURRENT_DATE
+  "item_todo" text,
+  "due_date" text
 ); 
 
--- Sample feedback item
-INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
-VALUES (4, 4, 5, 'Doing Great!');
+-- Sample todo item
+INSERT INTO "list" ("item_todo", "due_date")
+VALUES ('do the dishes', 'Monday');
